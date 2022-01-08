@@ -1,4 +1,4 @@
-import { cardsData } from './sketches/sketches.js';
+import { cardsData } from './main/sketches/sketches.js';
 
 (function init() {
 	const states = 'ready running pending'.split(' ');
@@ -18,7 +18,7 @@ import { cardsData } from './sketches/sketches.js';
 		}, data);
 
 
-		const dir = `sketches/${data.key}/`;
+		const dir = `main/sketches/${data.key}/`;
 		const files = [
 			`${dir}${data.thumb}`,
 			`./${dir}${data.file}`,
