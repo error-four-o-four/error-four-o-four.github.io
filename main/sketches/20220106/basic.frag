@@ -1,9 +1,7 @@
-#ifdef GL_ES
-      precision highp float;
-      precision highp int;
-#endif
-
 #extension GL_OES_standard_derivatives : enable
+
+precision highp float;
+precision highp int;
 
 #define PI      3.14159265358
 #define TAU     6.28318530718
@@ -41,7 +39,7 @@ void main() {
     float m = HexDist(hex.xy);
     float n = HexDist(hex.zw);
     float r = .25 + .2 * cos(2. * n - u_time);
-    m = smoothstep(r, r - fwidth(m), m);
+    m = smoothstep(r, r - .05, m);
 
     for (int i = 0; i < 3; i += 1) {
         rad[i] = .5 + .5 * cos(3. * n - .5 * PI * float(i) - u_time);
