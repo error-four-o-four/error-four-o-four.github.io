@@ -41,7 +41,11 @@ vec3 sparkle(in vec2 uv, in float lv, in float seed, in float time) {
     vec2 dir = 0.4 * h12_polar(seed);
     float k = smoothstep(1., .5, time);
     float l = sdfLine(uv, max(0., time - k) * dir, time * dir);
-    float m = u_resolution.y * smoothstep(0., 0.05 + lv * k, l);
+
+    // changed the smoothstep
+    // float m = u_resolution.y * smoothstep(0., 50. / u_resolution.y + lv * lv * k, l);
+    float m = u_resolution.y * smoothstep(0., fwidth(abs(l)) + lv * k, l);
+    // float m = u_resolution.y * smoothstep(0., 0.05 + lv * k, l);
     return vec3(1.0, 0.5, 0.1) / m;
 }
 
@@ -60,6 +64,7 @@ void main() {
     }
 
     rgb -= 4. * lv;
+    rgb = pow(rgb, vec3(0.4545));
 
     gl_FragColor = vec4(rgb, 1.0);
 }

@@ -1,9 +1,7 @@
-#ifdef GL_ES
-      precision highp float;
-      precision highp int;
-#endif
+#extension GL_OES_standard_derivatives : enable
 
-// #extension GL_OES_standard_derivatives : enable
+precision highp float;
+precision highp int;
 
 #define PI      3.14159265358
 #define TAU     6.28318530718
