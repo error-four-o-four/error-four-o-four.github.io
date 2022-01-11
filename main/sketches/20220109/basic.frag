@@ -1,9 +1,7 @@
-#ifdef GL_ES
-      precision highp float;
-      precision highp int;
-#endif
-
 // #extension GL_OES_standard_derivatives : enable
+
+precision highp float;
+precision highp int;
 
 #define PI      3.14159265358
 #define TAU     6.28318530718
@@ -30,23 +28,38 @@ vec4 HexCoords(vec2 uv) {
     return vec4(gv.x, gv.y, id.x, id.y);
 }
 
+// const float scale = 3.5;
+const float scale = 4.75;
+
 void main() {
     vec2 uv = (gl_FragCoord.xy - .5 * u_resolution.xy) / u_resolution.y;
 
-    float scale = 6.75;
-    vec3 rgb = vec3(0.);
-    vec4 hex = HexCoords(uv * scale);
-    vec3 rad;
+    // output
+    vec3 rgb;
 
-    float m = HexDist(hex.xy);
-    float n = HexDist(hex.zw);
-    float r = .25 + .2 * cos(2. * n - u_time);
-    m = smoothstep(r, r - .05, m);
+    // a mask for each color channel
+    vec3 ccm;
+
+    // float str = .45;
+    float str = .45 + .525 * length(uv) / scale;
+
+    float spd = fract(.5 * u_time) * TAU;
+    float dst = dot(uv, uv);
+    float ampl = 0.025;
+
+    vec2 freq = 5. * TAU * uv.yx + 2. * TAU * uv.xy;
 
     for (int i = 0; i < 3; i += 1) {
-        rad[i] = .5 + .5 * cos(3. * n - .5 * PI * float(i) - u_time);
+        float off = float(i) / 3. * PI;
+        vec2 p = uv + ampl * dst * sin(freq + spd + off);
+        vec4 hex = HexCoords(p * scale);
+        float mask = HexDist(hex.xy);
+
+        ccm[i] = smoothstep(str - .05, str, mask);
     }
 
-    rgb = mix(rgb, rad, m);
-    gl_FragColor = vec4(pow(rgb,vec3(0.4545)), 1.0);
+    rgb = vec3(ccm);
+    rgb = pow(rgb,vec3(0.4545));
+
+    gl_FragColor = vec4(rgb, 1.0);
 }
