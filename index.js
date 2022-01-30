@@ -91,7 +91,7 @@ import { cardsData } from './main/sketches/sketches.js';
 		this._userNode.parentNode.classList.add(states[1]);
 
 		this._userNode.removeChild(this._userNode.getElementsByClassName('card-thumb')[0]);
-	};
+	}
 
 	p5.prototype._toggleLooping = function() {
 		if (this.isLooping()) {
@@ -103,6 +103,29 @@ import { cardsData } from './main/sketches/sketches.js';
 			this.loop();
 			this._userNode.parentNode.classList.remove(states[0]);
 			this._userNode.parentNode.classList.add(states[1]);
+		}
+	}
+
+
+	p5.RendererGL.prototype._initContext = function() {
+		try {
+			this.drawingContext =
+				this.canvas.getContext('webgl2', this._pInst._glAttributes) ||
+				this.canvas.getContext('webgl', this._pInst._glAttributes) ||
+				this.canvas.getContext('experimental-webgl', this._pInst._glAttributes);
+			if (this.drawingContext === null) {
+				throw new Error('Error creating webgl context');
+			} else {
+				const gl = this.drawingContext;
+				gl.enable(gl.DEPTH_TEST);
+				gl.depthFunc(gl.LEQUAL);
+				gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+				this._viewport = this.drawingContext.getParameter(
+					this.drawingContext.VIEWPORT
+				);
+			}
+		} catch (er) {
+			throw er;
 		}
 	}
 })();
