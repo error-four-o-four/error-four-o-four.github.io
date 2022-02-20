@@ -84,7 +84,7 @@ import { cardsData } from './main/sketches/sketches.js';
 	}
 
 	p5.prototype._onInit = function(...args) {
-		console.log(this, args)
+
 	}
 	p5.prototype._cleanup = function() {
 		this._userNode.parentNode.classList.remove(states[2]);
