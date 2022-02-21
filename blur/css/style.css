@@ -81,9 +81,6 @@ section article p {
 .info-container span.toggle-looping {
 	cursor: pointer;
 }
-/* .canvas-container canvas {
-	cursor: pointer;
-} */
 
 .info-container {
 	width: 100%;
@@ -101,6 +98,7 @@ section article p {
 	background-color: #060606;
 	border-radius: .25rem;
 	border: 1px solid hsl(0, 0%, 50%);
+	box-shadow: 2px 2px 6px hsl(0, 0%, 4%);
 }
 
 .text-wrap {

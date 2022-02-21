@@ -47,7 +47,7 @@ export const sketch = (p) => {
 		// start
 buffer.draw(() => {
 	p.push();
-	p.background(50);
+	p.background(6);
 	p.noStroke();
 	p.noStroke();
 	p.fill(255);
