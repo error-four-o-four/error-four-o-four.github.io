@@ -1,0 +1,118 @@
+html, body {
+	background-color: hsl(0, 0%, 8%);
+}
+
+
+body {
+	font-family: Calibri, sans-serif;
+	line-height: 1.2;
+	color: hsl(0, 0%, 70%);
+}
+
+main {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+section {
+	width: 100%;
+	padding: 2rem 1rem;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+section h1 {
+	flex: 1 0 100%;
+}
+
+section article {
+	flex: 1 0 100%;
+	padding: 1rem 0;
+}
+
+section article p {
+	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+	section {
+		width: 540px;
+	}
+}
+@media (min-width: 768px) {
+	section {
+		width: 720px;
+	}
+}
+/* @media (min-width: 992px) {
+	section {
+		width: 960px;
+	}
+} */
+
+.canvas-wrap {
+	position: relative;
+}
+
+.canvas-container {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio */
+
+	overflow: hidden;
+}
+.info-container,
+.canvas-container canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.info-container span.toggle-looping {
+	cursor: pointer;
+}
+/* .canvas-container canvas {
+	cursor: pointer;
+} */
+
+.info-container {
+	width: 100%;
+	padding-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+.info-container span{
+	font-weight: bold;
+	padding: .5rem 1rem;
+}
+
+.canvas-container,
+.text-container {
+	background-color: #060606;
+	border-radius: .25rem;
+	border: 1px solid hsl(0, 0%, 50%);
+	box-shadow: 2px 2px 6px hsl(0, 0%, 4%);
+}
+
+.text-wrap {
+	overflow: hidden;
+}
+.text-container {
+	overflow: auto;
+	padding: .5rem .75rem;
+	margin-bottom: 1rem;
+}
+
+.text-container pre {
+	font-size: 0.75rem;
+}

@@ -1,12 +1,12 @@
-#ifdef GL_ES
-  precision highp float;
-  precision highp int;
-#endif
+#version 300 es
 
-attribute vec3 aPosition;
-attribute vec2 aTexCoord;
+precision highp float;
+precision highp int;
 
-varying vec2 vTexCoord;
+in vec3 aPosition;
+in vec2 aTexCoord;
+
+out vec2 vTexCoord;
 
 void main() {
   vec4 positionVec4 = vec4(aPosition, 1.0);
