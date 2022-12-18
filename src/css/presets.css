@@ -1,0 +1,83 @@
+:root {
+	/* https://farbvelo.elastiq.ch/ */
+	--clr-greenhouse: #3a6125;
+	--clr-grass: #5cab34;
+	--clr-emerald-rain: #80c172;
+	--clr-gum-leaf: #a2c4ab;
+	--clr-steel-mist: #c0cad7;
+	--clr-skyscraper: #d8dee6;
+
+	--clr-dark-grey: #090909;
+	--clr-medium-dark-grey: #101010;
+	--clr-medium-light-grey: #242424;
+}
+
+@custom-media --mq-min-480 screen and (min-width: 480px);
+@custom-media --mq-min-640 screen and (min-width: 640px);
+@custom-media --mq-min-960 screen and (min-width: 960px);
+
+nav,
+footer,
+.div-flex,
+section,
+article {
+	width: 100%;
+}
+
+body,
+main,
+.container-960,
+.container-480,
+section {
+	position: relative;
+}
+
+main,
+.container-960,
+.container-480 {
+	margin: 0 auto;
+}
+
+main,
+.container-960 {
+	width: min(100%, 960px);
+}
+
+.container-480 {
+	width: min(100%, 480px);
+}
+
+.div-flex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 4rem 2rem;
+
+	article {
+		max-width: 360px;
+	}
+	article.flex-item-1 {
+		max-width: 100%;
+	}
+}
+
+
+@media (--mq-min-640) {
+	.div-flex {
+		article:not(.flex-item-1) {
+			width: calc(50% - 1rem);
+		}
+	}
+}
+
+@media (--mq-min-960) {
+	.div-flex {
+		article:not(.flex-item-1) {
+			width: calc(33.333% - 1.5rem);
+		}
+	}
+}
+
+.clr-green {
+	color: var(--clr-grass);
+}

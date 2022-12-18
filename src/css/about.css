@@ -1,0 +1,52 @@
+#section-about {
+	.div-flex {
+		gap: 4rem 0;
+
+		article:not(.flex-item-1) {
+			max-width: 240px;
+		}
+		article:first-of-type p {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	ul,
+	p {
+		margin: 0;
+	}
+
+	ul {
+		li {
+			a {
+				display: inline-flex;
+				align-items: center;
+				height: 2rem;
+			}
+
+			span {
+				display: inline-block;
+				height: 100%;
+
+				&:first-of-type {
+					display: inline-flex;
+					width: 1.75rem;
+				}
+			}
+
+			svg {
+				display: inline-block;
+				height: 1.25rem;
+			}
+		}
+	}
+
+	ul:not(#ul-certificates) {
+		li {
+			text-align: left;
+			max-width: 120px;
+			margin: 0 auto;
+		}
+	}
+}

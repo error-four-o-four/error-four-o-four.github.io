@@ -1,0 +1,112 @@
+html {
+	background-color: var(--clr-dark-grey);
+
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: var(--clr-skyscraper);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Helvetica, sans-serif, sans-serif;
+}
+
+main {
+	padding: 0 1rem;
+
+	section {
+		min-height: 100vh;
+		padding: 5rem 0;
+	}
+
+	section:not(#section-welcome) {
+		display: flex;
+		align-items: center;
+
+
+		transition: opacity 0.3s ease-in;
+
+		&.hidden {
+			opacity: 0;
+			/* transform: translateX(5%); */
+		}
+	}
+}
+
+h1 {
+	font-size: clamp(2rem, 8vw, 4rem);
+	margin-bottom: clamp(1rem, 4vw, 2rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 6vw, 3rem);
+	margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+	text-align: center;
+}
+
+h1,
+h3 {
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h4,
+ul,
+p {
+	margin: 0.5rem 0 1rem;
+}
+
+@media (--mq-min-960) {
+	h1,
+	h2,
+	h3 {
+		text-align: left;
+	}
+}
+
+a,
+a:visited {
+	color: var(--clr-grass);
+	text-decoration: none;
+}
+a:focus-visible,
+a:active,
+a:hover,
+a.active {
+	border: none;
+	outline: none;
+	color: var(--clr-emerald-rain);
+	text-decoration: underline;
+}
+
+a svg {
+	fill: var(--clr-grass);
+}
+a:hover svg,
+a:focus-visible svg {
+	fill: var(--clr-emerald-rain);
+}
+

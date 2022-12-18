@@ -1,0 +1,33 @@
+{
+  "name": "error-four-o-four.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio: [https://error-four-o-four.github.io/](https://error-four-o-four.github.io/)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "build:icons": "node src/data/createIconsData.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/error-four-o-four/error-four-o-four.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/error-four-o-four/error-four-o-four.github.io/issues"
+  },
+  "homepage": "https://github.com/error-four-o-four/error-four-o-four.github.io#readme",
+  "devDependencies": {
+    "postcss": "^8.4.20",
+    "postcss-custom-media": "^9.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.0",
+    "rollup": "^3.7.4",
+    "rollup-plugin-esbuild-minify": "^1.0.7",
+    "rollup-plugin-postcss": "^4.0.2",
+    "simple-icons": "^8.1.0"
+  }
+}
