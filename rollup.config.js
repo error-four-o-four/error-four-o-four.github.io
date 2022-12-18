@@ -31,7 +31,8 @@ export default CLIArgs => {
 			output: {
 				file: './public/animation.min.js',
 				format: 'iife'
-			}
+			},
+			plugins
 		},
 		{
 			input: './src/index.js',
