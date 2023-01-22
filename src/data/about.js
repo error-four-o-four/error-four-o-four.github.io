@@ -18,4 +18,8 @@ export const certificates = [
 		title: 'JavaScript Algorithms and Data Structures',
 		url: 'https://freecodecamp.org/certification/httpfourofour/javascript-algorithms-and-data-structures',
 	},
+	{
+		title: 'Front End Development Libraries',
+		url: 'https://www.freecodecamp.org/certification/httpfourofour/front-end-development-libraries',
+	},
 ];

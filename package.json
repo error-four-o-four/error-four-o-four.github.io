@@ -1,7 +1,7 @@
 {
   "name": "error-four-o-four.github.io",
   "version": "1.0.0",
-  "description": "Portfolio: [https://error-four-o-four.github.io/](https://error-four-o-four.github.io/)",
+  "description": "Portfolio: [https://error-four-o-four.github.io/github-page/](https://error-four-o-four.github.io/github-page/)",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -17,9 +17,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/error-four-o-four/error-four-o-four.github.io/issues"
+    "url": "https://github.com/error-four-o-four/github-page/issues"
   },
-  "homepage": "https://github.com/error-four-o-four/error-four-o-four.github.io#readme",
+  "homepage": "https://github.com/error-four-o-four/github-page#readme",
   "devDependencies": {
     "postcss": "^8.4.20",
     "postcss-custom-media": "^9.0.1",
