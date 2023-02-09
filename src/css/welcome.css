@@ -1,7 +1,11 @@
 #section-welcome {
 	height: 100vh;
 
+	padding: 0;
+
 	#div-welcome-header {
+		padding: 5rem 0;
+
 		z-index: 1;
 		background-image: linear-gradient(to bottom, #09090999 50%, transparent);
 	}
@@ -14,7 +18,7 @@
 
 		display: flex;
 		align-items: flex-end;
-		padding-bottom: 5rem;
+		padding-bottom: 2.5rem;
 
 		justify-content: center;
 	}
