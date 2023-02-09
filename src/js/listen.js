@@ -114,16 +114,3 @@ function createLazyloadObserver() {
 	for (const project of elements.projects) observer.observe(project);
 	observer.observe(elements.sections.about);
 }
-
-const test = {
-	get a() {
-		return 'value a';
-	},
-	get b() {
-		return 'value b';
-	},
-	c: 'value c',
-};
-
-const { a, ...rest } = test;
-console.log(a, rest);
