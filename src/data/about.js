@@ -22,4 +22,12 @@ export const certificates = [
 		title: 'Front End Development Libraries',
 		url: 'https://www.freecodecamp.org/certification/httpfourofour/front-end-development-libraries',
 	},
+	{
+		title: 'Back End Development and APIs',
+		url: 'https://www.freecodecamp.org/certification/httpfourofour/back-end-development-and-apis',
+	},
+	{
+		title: 'Relational Database',
+		url: 'https://www.freecodecamp.org/certification/httpfourofour/relational-database-v8',
+	},
 ];
