@@ -10,6 +10,11 @@
 
 	color: var(--clr-grass);
 	background-image: linear-gradient(to bottom, #090909cc, transparent);
+	text-shadow:
+		1px -1px 2px #09090966,
+		-1px -1px 2px #09090966,
+		-1px 1px 2px #09090966,
+		1px 1px 2px #09090966;
 
 	#ul-navbar {
 		margin: 0;
@@ -20,7 +25,6 @@
 		gap: 1rem;
 
 		li {
-
 			display: inline-block;
 			height: var(--li-size);
 			line-height: var(--li-size);
@@ -46,7 +50,6 @@
 		}
 	}
 }
-
 
 @media (--mq-min-960) {
 	#nav-navbar #ul-navbar {
