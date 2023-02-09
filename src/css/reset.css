@@ -16,7 +16,7 @@ html {
 	background-color: #090909;
 }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: noprefernce) {
 	html {
 		scroll-behavior: auto;
 	}
