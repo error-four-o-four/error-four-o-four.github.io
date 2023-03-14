@@ -2,7 +2,7 @@ import elements from './elements.js';
 
 export const promisedSvgs = new Promise(async (res, rej) => {
 	try {
-		const response = await fetch('./svgs.json');
+		const response = await fetch('svgs.json');
 		const data = await response.json();
 		res(data);
 	} catch (error) {
