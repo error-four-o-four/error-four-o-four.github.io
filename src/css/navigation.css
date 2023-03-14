@@ -1,4 +1,4 @@
-#nav-navbar {
+nav {
 	--li-size: clamp(3rem, 6vw, 4rem);
 	--font-size: clamp(1rem, 2vw, 1.5rem);
 
@@ -6,6 +6,7 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
+	width: 100%;
 	height: var(--li-size);
 
 	color: var(--clr-grass);
@@ -38,7 +39,7 @@
 				font-size: var(--font-size);
 			}
 
-			#profile-link {
+			a:last-of-type {
 				display: inline-flex;
 				align-items: center;
 			}
@@ -52,7 +53,7 @@
 }
 
 @media (--mq-min-960) {
-	#nav-navbar #ul-navbar {
+	nav #ul-navbar {
 		position: absolute;
 		width: min(100%, 480px);
 		right: 0;

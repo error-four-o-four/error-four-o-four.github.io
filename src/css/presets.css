@@ -16,11 +16,13 @@
 @custom-media --mq-min-640 screen and (min-width: 640px);
 @custom-media --mq-min-960 screen and (min-width: 960px);
 
-nav,
+/* nav,
 footer,
-.div-flex,
 section,
-article {
+{
+} */
+article ,
+.div-flex {
 	width: 100%;
 }
 
@@ -60,7 +62,6 @@ main,
 		max-width: 100%;
 	}
 }
-
 
 @media (--mq-min-640) {
 	.div-flex {
