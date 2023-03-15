@@ -8,6 +8,20 @@
 
 		z-index: 1;
 		background-image: linear-gradient(to bottom, #09090999 50%, transparent);
+
+		#txt-animated {
+			position: relative;
+		}
+		#txt-animated::after {
+			content: '|';
+			position: absolute;
+			top: -0.325rem;
+			right: -0.75rem;
+			display: none;
+		}
+		#txt-animated.cursor::after {
+			display: block;
+		}
 	}
 
 	#div-welcome-pfp {

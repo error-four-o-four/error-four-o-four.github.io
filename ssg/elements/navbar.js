@@ -4,7 +4,7 @@ import { injectSvgLink, stringToFragment } from '../utils.js';
 const ulId = 'ul-navbar';
 
 const tmplNavbar = `
-<nav id="nav-navbar">
+<nav>
 	<div class="container-960">
 		<ul id="${ulId}"></ul>
 	</div>

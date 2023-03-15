@@ -2,7 +2,7 @@ import './style.css';
 
 import elements from './js/elements.js';
 
-import { playAnimation } from './js/animation.js';
+import { playTxtAnimation, playPfpAnimation } from './js/animation.js';
 import { createNavbarListener } from './js/navigation.js';
 import { createSectionObserver } from './js/observers.js';
 import { injectSvgs, lazyLoadAllImages, promisedAnimationImages, promisedSvgs } from './js/loaders.js';
@@ -21,8 +21,9 @@ createNavbarListener();
 createSectionObserver();
 
 window.addEventListener('load', () => {
-	promisedAnimationImages.then(playAnimation);
+	promisedAnimationImages.then(playPfpAnimation);
 	promisedSvgs.then(injectSvgs);
 
 	lazyLoadAllImages();
+	playTxtAnimation();
 });

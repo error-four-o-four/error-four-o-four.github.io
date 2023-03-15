@@ -7,6 +7,7 @@ const sections = ['#section-welcome', '#section-projects', '#section-about'].red
 
 const pfpBg = document.getElementById('img-pfp-bg');
 const pfp = document.getElementById('img-pfp');
+const txt = document.getElementById('txt-animated');
 
 const cards = [...document.querySelectorAll('.project-card')];
 
@@ -27,6 +28,7 @@ export default {
 	sections,
 	pfpBg,
 	pfp,
+	txt,
 	cards,
 	uls,
 	links,
