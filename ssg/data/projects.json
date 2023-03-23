@@ -1,5 +1,41 @@
 [
 	{
+		"title": "Frequently Used UtilitieS",
+		"descr": "A TS library of frequently used utility functions. ",
+		"thumb": {
+			"src": "test1.png",
+			"srcset": null
+		},
+		"links": {
+			"repo": "https://github.com/error-four-o-four/utils-fuu",
+			"demo": null
+		}
+	},
+	{
+		"title": "DOM Utilities",
+		"descr": "A small TS library to manipulate the DOM.",
+		"thumb": {
+			"src": "test1.png",
+			"srcset": null
+		},
+		"links": {
+			"repo": "https://github.com/error-four-o-four/utils-dom",
+			"demo": null
+		}
+	},
+	{
+		"title": "freeCodeCamp Projects",
+		"descr": "5 projects which were built to obtain the freeCodeCamp Front End Development Libraries certification",
+		"thumb": {
+			"src": "test1.png",
+			"srcset": null
+		},
+		"links": {
+			"repo": "https://github.com/error-four-o-four/projects",
+			"demo": "https://error-four-o-four.github.io/projects/"
+		}
+	},
+	{
 		"title": "Dummy",
 		"descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quo amet minima similique voluptatem consectetur saepe impedit?",
 		"thumb": {
@@ -21,30 +57,6 @@
 		"links": {
 			"repo": "#",
 			"demo": "#"
-		}
-	},
-	{
-		"title": "Fancy Web Components",
-		"descr": "A set of reusable, custom web components.",
-		"thumb": {
-			"src": null,
-			"srcset": null
-		},
-		"links": {
-			"repo": "https://github.com/error-four-o-four/native-web-component-selector",
-			"demo": null
-		}
-	},
-	{
-		"title": "DOM Utilities",
-		"descr": "A small typescript-library to manipulate the DOM.",
-		"thumb": {
-			"src": null,
-			"srcset": null
-		},
-		"links": {
-			"repo": "https://github.com/error-four-o-four/utils-dom",
-			"demo": null
 		}
 	}
 ]
