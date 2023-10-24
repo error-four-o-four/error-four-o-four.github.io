@@ -1,31 +1,36 @@
 {
-  "name": "error-four-o-four.github.io",
-  "version": "1.0.0",
-  "description": "Portfolio: [https://error-four-o-four.github.io/](https://error-four-o-four.github.io/)",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:pre": "node ssg/prerender.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/error-four-o-four/error-four-o-four.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://error-four-o-four.github.io/",
-  "devDependencies": {
-    "jsdom": "^22.1.0",
-    "postcss": "^8.4.31",
-    "postcss-custom-media": "^10.0.1",
-    "postcss-import": "^15.1.0",
-    "postcss-minify": "^1.1.0",
-    "postcss-nested": "^6.0.1",
-    "prettier": "^3.0.3",
-    "simple-icons": "^9.16.1",
-    "vite": "^4.4.11"
-  }
+	"name": "error-four-o-four.github.io",
+	"version": "1.0.0",
+	"description": "Portfolio: [https://error-four-o-four.github.io/](https://error-four-o-four.github.io/)",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host",
+		"ssg:html": "ts-node ssg/html/main.ts",
+		"ssg:icons": "ts-node ssg/icons/main.ts",
+		"build": "tsc && vite build",
+		"preview": "vite preview --host"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/error-four-o-four/error-four-o-four.github.io.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"homepage": "https://error-four-o-four.github.io/",
+	"devDependencies": {
+		"@iconify/json": "^2.2.131",
+		"@iconify/types": "^2.0.0",
+		"@iconify/utils": "^2.1.11",
+		"html-minifier-terser": "^7.2.0",
+		"postcss": "^8.4.31",
+		"postcss-custom-media": "^10.0.1",
+		"postcss-import": "^15.1.0",
+		"postcss-nested": "^6.0.1",
+		"prettier": "^3.0.3",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.11"
+	}
 }

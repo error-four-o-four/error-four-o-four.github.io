@@ -1,7 +1,3 @@
 @import './css/presets.css';
-@import './css/main.css';
+@import './css/container.css';
 @import './css/navigation.css';
-@import './css/welcome.css';
-@import './css/projects.css';
-@import './css/about.css';
-@import './css/footer.css';
