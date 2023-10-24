@@ -81,6 +81,6 @@ const projects: Array<Readonly<Project>> = [
 		},
 		tags: ['more', 'dummy', 'tags'],
 	},
-]
+];
 
-export default projects
+export default projects;

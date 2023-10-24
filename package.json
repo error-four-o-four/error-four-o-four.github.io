@@ -8,6 +8,8 @@
 		"dev": "vite --host",
 		"ssg:html": "ts-node ssg/html/main.ts",
 		"ssg:icons": "ts-node ssg/icons/main.ts",
+		"lint:check": "prettier --config .prettierrc --check .",
+		"lint": "prettier --config .prettierrc --write .",
 		"build": "tsc && vite build",
 		"preview": "vite preview --host"
 	},
