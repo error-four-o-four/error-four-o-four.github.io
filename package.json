@@ -5,13 +5,15 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --host",
+		"dev": "vite",
+		"dev:host": "vite --host",
 		"ssg:html": "ts-node ssg/html/main.ts",
 		"ssg:icons": "ts-node ssg/icons/main.ts",
-		"lint:check": "prettier --config .prettierrc --check .",
-		"lint": "prettier --config .prettierrc --write .",
+		"format:check": "prettier --config .prettierrc --check .",
+		"format": "prettier --config .prettierrc --write .",
 		"build": "tsc && vite build",
-		"preview": "vite preview --host"
+		"preview": "vite preview",
+		"preview:host": "vite preview --host"
 	},
 	"repository": {
 		"type": "git",
