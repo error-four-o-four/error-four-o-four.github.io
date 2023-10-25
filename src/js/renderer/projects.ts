@@ -89,7 +89,7 @@ const appendTags = (parent: HTMLDivElement, data: string[]) => {
 const appendDescription = (parent: HTMLDivElement, data: string) => {
 	const element = document.createElement('p');
 	element.classList.add('comment');
-	element.innerText = data;
+	element.innerHTML = data;
 
 	parent.append(element);
 };
@@ -101,12 +101,12 @@ const createProject = (template: HTMLTemplateElement, data: Project) => {
 	assertInstanceOf(content, HTMLDivElement);
 
 	appendTitle(content, data.title);
-
 	data.thumb && appendThumbnail(content, data.thumb);
+
+	appendDescription(content, data.descr);
 	appendLinks(content, data.links);
 
 	data.tags && appendTags(content, data.tags);
-	appendDescription(content, data.descr);
 };
 
 export const injectProjects = () => {
