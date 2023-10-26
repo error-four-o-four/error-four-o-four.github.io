@@ -19,7 +19,7 @@ const links: Readonly<Link[]> = [
 	},
 	{
 		text: 'freeCodeCamp',
-		url: 'https://www.freecodecamp.org/httpfourofour',
+		url: 'https://www.freecodecamp.org/errorfourofour',
 	},
 	{
 		text: 'OpenProcessing',
@@ -27,7 +27,6 @@ const links: Readonly<Link[]> = [
 	},
 	// {
 	// 	title: 'Twitter',
-	// 	siSlug: 'siTwitter',
 	// 	url: 'https://twitter.com/error4094754562',
 	// },
 ];

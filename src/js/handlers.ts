@@ -1,6 +1,9 @@
 import { updateContents } from './viewport/handlers.js';
 
-import { updateSectionIndicator } from './navigation/handlers.js';
+import {
+	updateSectionIndicator,
+	updateOnNavItemClick,
+} from './navigation/handlers.js';
 
 import {
 	updateMinimapIndicator,
@@ -37,6 +40,8 @@ export const attachHandlers = () => {
 	elements.minimapWrap.addEventListener('mouseup', () => {
 		requestAnimationFrame(updateMinimapOnMouseup);
 	});
+
+	elements.navItems.addEventListener('click', updateOnNavItemClick);
 
 	window.addEventListener('resize', () => {
 		requestAnimationFrame(updateContents);

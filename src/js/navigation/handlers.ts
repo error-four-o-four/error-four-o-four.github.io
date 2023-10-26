@@ -1,13 +1,15 @@
+import { assertInstanceOf } from '../../utils.js';
+
 import { viewport } from '../viewport/viewport.js';
 
 import elements from '../elements.js';
 
-// const getAnchorElementRecursive = (element: Element): Element | null =>
-// 	element.localName === 'a'
-// 		? element
-// 		: element.parentElement
-// 		? getAnchorElementRecursive(element.parentElement)
-// 		: null;
+const getAnchorElementRecursive = (element: Element): Element | null =>
+	element.localName === 'a'
+		? element
+		: element.parentElement
+		? getAnchorElementRecursive(element.parentElement)
+		: null;
 
 const findActiveItem = (id: string) =>
 	[...elements.navItems.getElementsByTagName('a')].find(
@@ -45,4 +47,20 @@ export const updateSectionIndicator = () => {
 
 	activeItem = findActiveItem(identifier);
 	activeItem?.classList.add(selector);
+};
+
+export const updateOnNavItemClick = (e: MouseEvent) => {
+	e.preventDefault();
+
+	assertInstanceOf(e.target, Element);
+	const anchor = getAnchorElementRecursive(e.target);
+
+	assertInstanceOf(anchor, HTMLAnchorElement);
+
+	const hash = anchor.hash.substring(1);
+	const section = elements.sections[hash as keyof typeof elements.sections];
+
+	if (!section) return;
+
+	section.scrollIntoView({ behavior: 'smooth' });
 };

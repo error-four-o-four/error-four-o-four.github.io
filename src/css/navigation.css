@@ -8,6 +8,10 @@ nav {
 	top: 0;
 	left: 0;
 
+	div:first-of-type {
+		padding: 1rem;
+	}
+
 	a {
 		display: block;
 		color: var(--clr-medium);
@@ -22,10 +26,6 @@ nav {
 }
 
 #nav__items {
-	div:first-of-type {
-		padding: 1rem;
-	}
-
 	a {
 		border-right: 2px solid transparent;
 		padding: 0.75rem;
@@ -48,11 +48,11 @@ nav {
 }
 
 @media screen and (min-width: 960px) {
-	#nav__items {
-		div:first-of-type {
-			padding: 0.8rem;
-		}
+	nav div:first-of-type {
+		padding: 0.8rem;
+	}
 
+	#nav__items {
 		a {
 			padding: 0.6rem;
 		}

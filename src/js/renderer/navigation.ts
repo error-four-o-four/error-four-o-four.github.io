@@ -5,10 +5,11 @@ import elements from '../elements.js';
 
 import { sectionIds } from '../identifiers.js';
 
-const createAvatar = () => {
+const prependAvatar = () => {
 	const wrap = document.createElement('div');
 	wrap.innerHTML = icons.avatar;
-	return wrap;
+
+	elements.navContainer.children[0].prepend(wrap);
 };
 
 // ##################
@@ -51,18 +52,16 @@ const createNavLink = (data: Link) => {
 	return link;
 };
 
-// const navLinksData = [links[0], links[3], links[1]];
-
 // ##################
 
 export const injectNavigation = () => {
+	prependAvatar();
+
 	const navItemsFragment = new DocumentFragment();
-	navItemsFragment.append(createAvatar());
 	navItemsFragment.append(...navItemsData.map((data) => createNavItem(data)));
 	elements.navItems.append(navItemsFragment);
 
 	const navLinksFragment = new DocumentFragment();
 	navLinksFragment.append(...links.map((data) => createNavLink(data)));
-	// navLinksFragment.append(...navLinksData.map((data) => createNavLink(data)));
 	elements.navLinks.append(navLinksFragment);
 };
