@@ -4,7 +4,6 @@ const props = {
 	first: 'Jens',
 	last: 'Bachmayer',
 	alias: 'error‑four‑o‑four',
-	avatar: '.&sol;assets&sol;avatar.png',
 };
 
 const age = Math.floor(
@@ -39,7 +38,7 @@ export default `
 	<span class="clr-red">${age}</span><span>&comma;</span>
 	<br />
 
-	<span class="clr-cyan">handles</span><span>&colon;</span>
+	<span class="clr-cyan">links</span><span>&colon;</span>
 	<span class="clr-magenta">&lbrack;</span>
 
 	<div class="indent clr-green">

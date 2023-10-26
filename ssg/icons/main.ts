@@ -8,7 +8,7 @@ import { locate } from '@iconify/json';
 import prettier from 'prettier';
 
 import data from './data.js';
-import { src, pub } from '../paths.js';
+import paths from '../paths.js';
 
 type IconRecord = {
 	name: string;
@@ -16,7 +16,7 @@ type IconRecord = {
 };
 
 const filename = 'icons.ts';
-const target = path.resolve(src, 'data', filename);
+const target = path.resolve(paths.src, 'data', filename);
 
 const generateSVG = (data: IconifyJSON, name: string) => {
 	const iconData = getIconData(data, name);
@@ -30,10 +30,9 @@ const generateSVG = (data: IconifyJSON, name: string) => {
 	return iconToHTML(replaceIDs(icon.body), icon.attributes);
 };
 
-const generateAvatar = () => {
-	const name = 'avatar';
-	const file = path.resolve(pub, 'assets', 'avatar-16px.svg');
-	const svg = fs.readFileSync(file, 'utf-8');
+const getCustomSvg = (name: string, file: string) => {
+	let svg = fs.readFileSync(file, 'utf-8');
+	svg = svg.replaceAll(/\t|\r/g, '').replaceAll(/\n/g, ' ');
 	return {
 		name,
 		svg,
@@ -53,7 +52,13 @@ const iconsToJSONString = (array: Array<IconRecord>) => {
 	const icons = [];
 	console.log(`Generating ${filename} ...`);
 
-	icons.push(generateAvatar());
+	let name = 'avatar';
+	let file = path.resolve(paths.pub, 'assets', 'avatar-16px.svg');
+	icons.push(getCustomSvg(name, file));
+
+	name = 'openprocessing';
+	file = path.resolve(paths.ssg, 'icons', name + '.svg');
+	icons.push(getCustomSvg(name, file));
 
 	for (const prefix in data) {
 		const file = locate(prefix);

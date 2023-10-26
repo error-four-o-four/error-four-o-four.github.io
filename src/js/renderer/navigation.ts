@@ -16,7 +16,7 @@ const createAvatar = () => {
 const createNavItem = (data: NavItemData) => {
 	const link = document.createElement('a');
 	link.href = `#${data.hash}`;
-	link.innerHTML = `<span inert="true" class="sr-only">External link to ${data.hash} section</span>${data.svg}`;
+	link.innerHTML = `<span inert="true" class="sr-only">Internal link to ${data.hash} section</span>${data.svg}`;
 
 	return link;
 };
@@ -51,7 +51,7 @@ const createNavLink = (data: Link) => {
 	return link;
 };
 
-const navLinksData = [links[0], links[3], links[1]];
+// const navLinksData = [links[0], links[3], links[1]];
 
 // ##################
 
@@ -62,6 +62,7 @@ export const injectNavigation = () => {
 	elements.navItems.append(navItemsFragment);
 
 	const navLinksFragment = new DocumentFragment();
-	navLinksFragment.append(...navLinksData.map((data) => createNavLink(data)));
+	navLinksFragment.append(...links.map((data) => createNavLink(data)));
+	// navLinksFragment.append(...navLinksData.map((data) => createNavLink(data)));
 	elements.navLinks.append(navLinksFragment);
 };

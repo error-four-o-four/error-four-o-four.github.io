@@ -28,12 +28,6 @@
 	--clr-dark-grey: #242424;
 }
 
-@media screen and (min-width: 960px) {
-	:root {
-		font-size: 15px;
-	}
-}
-
 html {
 	color-scheme: dark;
 	color: var(--clr-skyscraper);
@@ -64,6 +58,16 @@ body {
 
 	display: grid;
 	grid-template-columns: 1fr var(--nav-width);
+}
+
+@media screen and (min-width: 960px) {
+	:root {
+		font-size: 15px;
+	}
+
+	body {
+		--nav-width: 3.2rem;
+	}
 }
 
 #main__container {

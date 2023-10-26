@@ -10,8 +10,16 @@ const links: Readonly<Link[]> = [
 		url: 'https://github.com/error-four-o-four',
 	},
 	{
+		text: 'npm',
+		url: 'https://www.npmjs.com/~http404',
+	},
+	{
 		text: 'Discord',
 		url: 'https://discordapp.com/users/790552703058837514',
+	},
+	{
+		text: 'freeCodeCamp',
+		url: 'https://www.freecodecamp.org/httpfourofour',
 	},
 	{
 		text: 'OpenProcessing',
@@ -22,10 +30,6 @@ const links: Readonly<Link[]> = [
 	// 	siSlug: 'siTwitter',
 	// 	url: 'https://twitter.com/error4094754562',
 	// },
-	{
-		text: 'npm',
-		url: 'https://www.npmjs.com/~http404',
-	},
 ];
 
 export default links;

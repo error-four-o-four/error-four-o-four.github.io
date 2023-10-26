@@ -47,6 +47,24 @@ nav {
 	}
 }
 
+@media screen and (min-width: 960px) {
+	#nav__items {
+		div:first-of-type {
+			padding: 0.8rem;
+		}
+
+		a {
+			padding: 0.6rem;
+		}
+	}
+
+	#nav__links {
+		a {
+			padding: 0.8rem;
+		}
+	}
+}
+
 @media (max-height: 480px) {
 	#nav__links {
 		display: none;
