@@ -9,6 +9,7 @@
 		"dev:host": "vite --host",
 		"ssg:html": "ts-node ssg/html/main.ts",
 		"ssg:icons": "ts-node ssg/icons/main.ts",
+		"ssg:projects": "ts-node ssg/projects/main.ts",
 		"format:check": "prettier --config .prettierrc --check .",
 		"format": "prettier --config .prettierrc --write .",
 		"build": "tsc && vite build",
@@ -28,6 +29,7 @@
 		"@iconify/types": "^2.0.0",
 		"@iconify/utils": "^2.1.11",
 		"html-minifier-terser": "^7.2.0",
+		"image-size": "^1.0.2",
 		"postcss": "^8.4.31",
 		"postcss-custom-media": "^10.0.1",
 		"postcss-import": "^15.1.0",
@@ -35,6 +37,7 @@
 		"prettier": "^3.0.3",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.11"
+		"vite": "^4.4.11",
+		"vite-plugin-static-copy": "^0.17.0"
 	}
 }

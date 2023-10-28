@@ -1,9 +1,8 @@
-import { assertInstanceOf } from '../../utils.js';
+import { assertInstanceOf } from '@/utils.js';
 
-import technnologies from '../../data/technologies.js';
-import { type Link } from '../../data/links.js';
-
-import certificates, { type Certificate } from '../../data/certificates.js';
+import { type Link, type Certificate } from '@data/types.js';
+import technnologies from '@data/technologies.js';
+import certificates from '@data/certificates.js';
 
 import elements from '../elements.js';
 

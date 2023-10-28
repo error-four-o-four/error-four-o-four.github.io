@@ -8,7 +8,7 @@
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
+		// "allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
@@ -17,11 +17,17 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@data/*": ["data/*"]
+		}
 	},
 	"ts-node": {
 		"esm": true
 	},
-	"include": ["src/**/*", "ssg/**/*"],
+	"include": ["src/**/*", "ssg/**/*", "data/**/*"],
 	"exclude": ["node_modules", "dist"]
 }

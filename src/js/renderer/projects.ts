@@ -1,10 +1,12 @@
-import { assertInstanceOf } from '../../utils.js';
+import { assertInstanceOf } from '@/utils.js';
 
-import projects, {
+import projects from '@data/projects.dict.js';
+
+import {
 	type Project,
-	type Thumbnail,
-	type Links,
-} from '../../data/projects.js';
+	type ProjectImage,
+	type ProjectLinks,
+} from '@data/types.js';
 
 import elements from '../elements.js';
 
@@ -27,18 +29,23 @@ const appendTitle = (parent: HTMLDivElement, title: string) => {
 <br />`;
 };
 
-const appendThumbnail = (parent: HTMLDivElement, data: Thumbnail) => {
+const appendThumbnail = (
+	parent: HTMLDivElement,
+	image: ProjectImage,
+	thumb: string
+) => {
 	const wrap = document.createElement('div');
 	wrap.classList.add('project__thumb');
-	wrap.style.aspectRatio = `${data.width / data.height}`;
+	wrap.style.aspectRatio = `${image.width / image.height}`;
 
-	const url = `url(assets/${data.src.split('.')[0] + '-small.webp'})`;
+	const base = import.meta.env.DEV ? './data/projects/' : './assets/';
+
+	const url = `url(${base}${thumb})`;
 	wrap.style.backgroundImage = url;
 
 	const img = document.createElement('img');
 	img.loading = 'lazy';
-	img.alt = data.alt || '';
-	img.src = `assets/${data.src}`;
+	img.src = base + image.src;
 
 	wrap.append(img);
 	parent.append(wrap);
@@ -53,7 +60,7 @@ const createProjectLink = (url: string, text: string) => {
 	return link;
 };
 
-const appendLinks = (parent: HTMLDivElement, data: Links) => {
+const appendLinks = (parent: HTMLDivElement, data: ProjectLinks) => {
 	parent.innerHTML += `
 <span class="clr-cyan">links</span>&colon;
 <span class="clr-blue">&lbrack;</span>
@@ -101,7 +108,7 @@ const createProject = (template: HTMLTemplateElement, data: Project) => {
 	assertInstanceOf(content, HTMLDivElement);
 
 	appendTitle(content, data.title);
-	data.thumb && appendThumbnail(content, data.thumb);
+	data.image && data.thumb && appendThumbnail(content, data.image, data.thumb);
 
 	appendDescription(content, data.descr);
 	appendLinks(content, data.links);
@@ -116,7 +123,15 @@ export const injectProjects = () => {
 	template.innerHTML = createSectionHTMLBefore('projects');
 	fragment.append(template.content.cloneNode(true));
 
-	for (const data of projects) {
+	const ordered = [
+		projects.kummerbot,
+		projects.jss,
+		projects.fccTimer,
+		projects.fccCalculator,
+		projects.fuus,
+	];
+
+	for (const data of ordered) {
 		createProject(template, data);
 		fragment.append(template.content.cloneNode(true));
 	}

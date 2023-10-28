@@ -1,4 +1,5 @@
-import links, { type Link } from '../../../src/data/links.js';
+import { type Link } from '../../../data/types.js';
+import links from '../../../data/links.js';
 
 const props = {
 	first: 'Jens',

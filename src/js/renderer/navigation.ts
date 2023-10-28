@@ -1,5 +1,7 @@
-import links, { type Link } from '../../data/links.js';
-import icons from '../../data/icons.js';
+import links from '@data/links.js';
+import icons from '@data/icons.js';
+
+import { type Link } from '@data/types.js';
 
 import elements from '../elements.js';
 

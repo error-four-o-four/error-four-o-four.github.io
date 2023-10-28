@@ -1,8 +1,4 @@
-export type Link = {
-	text: string;
-	url: string;
-	alt?: string;
-};
+import { Link } from './types.js';
 
 const links: Readonly<Link[]> = [
 	{

@@ -1,8 +1,4 @@
-import { type Link } from './links.js';
-
-export type Certificate = Link & {
-	titleSmall?: string;
-};
+import { type Certificate } from './types.js';
 
 const certificates: Readonly<Certificate[]> = [
 	{
