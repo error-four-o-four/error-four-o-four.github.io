@@ -1,22 +1,21 @@
-import path from 'node:path';
 import fs from 'node:fs';
+import { fileURLToPath, URL } from 'node:url';
 
 import { type IconifyJSON } from '@iconify/types';
 import { getIconData, iconToHTML, iconToSVG, replaceIDs } from '@iconify/utils';
 import { locate } from '@iconify/json';
 
 import prettier from 'prettier';
+import { jsParserOptions } from '../prettier.options.js';
 
 import data from './data.js';
-import paths from '../paths.js';
 
 type IconRecord = {
 	name: string;
 	svg: string;
 };
 
-const filename = 'icons.ts';
-const target = path.resolve(paths.src, 'data', filename);
+const target = fileURLToPath(new URL('../../data/icons.ts', import.meta.url));
 
 const generateSVG = (data: IconifyJSON, name: string) => {
 	const iconData = getIconData(data, name);
@@ -49,15 +48,18 @@ const iconsToJSONString = (array: Array<IconRecord>) => {
 };
 
 (async () => {
+	console.log(`Generating Icons ...`);
+
 	const icons = [];
-	console.log(`Generating ${filename} ...`);
 
 	let name = 'avatar';
-	let file = path.resolve(paths.pub, 'assets', 'avatar-16px.svg');
+	let file = fileURLToPath(
+		new URL('../../data/assets/avatar-16px.svg', import.meta.url)
+	);
 	icons.push(getCustomSvg(name, file));
 
 	name = 'openprocessing';
-	file = path.resolve(paths.ssg, 'icons', name + '.svg');
+	file = fileURLToPath(new URL('./openprocessing.svg', import.meta.url));
 	icons.push(getCustomSvg(name, file));
 
 	for (const prefix in data) {
@@ -80,7 +82,7 @@ const iconsToJSONString = (array: Array<IconRecord>) => {
 	let output = `// generated with node script\nexport default ${iconsToJSONString(
 		icons
 	)}`;
-	output = await prettier.format(output, { parser: 'espree' });
+	output = await prettier.format(output, jsParserOptions);
 
 	fs.writeFileSync(target, output, 'utf-8');
 	console.log(`Written data to '${target}'`);

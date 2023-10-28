@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 
 import prettier from 'prettier';
+import { jsParserOptions } from '../prettier.options.js';
 
 import { type Project } from '@data/types';
 
@@ -50,7 +51,7 @@ const getProjects = async (urls: Urls) => {
 	const toOutput = async (input: string) =>
 		await prettier.format(
 			`// generated with node script\nexport default ${input}`,
-			{ parser: 'espree' }
+			jsParserOptions
 		);
 
 	const toFile = (target: string, data: string) => {

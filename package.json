@@ -7,11 +7,11 @@
 	"scripts": {
 		"dev": "vite",
 		"dev:host": "vite --host",
-		"ssg:html": "ts-node ssg/html/main.ts",
-		"ssg:icons": "ts-node ssg/icons/main.ts",
-		"ssg:projects": "ts-node ssg/projects/main.ts",
-		"format:check": "prettier --config .prettierrc --check .",
-		"format": "prettier --config .prettierrc --write .",
+		"create:html": "ts-node scripts/html/main.ts",
+		"create:icons": "ts-node scripts/icons/main.ts",
+		"create:projects": "ts-node scripts/projects/main.ts",
+		"format:check": "prettier --config .prettierrc.json --check .",
+		"format": "prettier --config .prettierrc.json --write .",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"preview:host": "vite preview --host"
