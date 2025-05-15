@@ -1,84 +1,144 @@
 :root {
-	/* https://farbvelo.elastiq.ch/ */
-	--clr-greenhouse: #3a6125;
-	--clr-grass: #5cab34;
-	--clr-emerald-rain: #80c172;
-	--clr-gum-leaf: #a2c4ab;
-	--clr-steel-mist: #c0cad7;
-	--clr-skyscraper: #d8dee6;
+	/*
+		defined inline
+		--clr-skyscraper: #d8dee6;
 
-	--clr-dark-grey: #090909;
-	--clr-medium-dark-grey: #101010;
-	--clr-medium-light-grey: #242424;
+		--clr-darkest-grey: #090909;
+		--clr-darker-grey: #101010;
+		--clr-dark-grey: #242424;
+	*/
+
+	--clr-emerald-rain: #80c172;
+
+	--clr-medium: #666;
+	--clr-medium-light: #999;
+	--clr-light: #ccc;
+
+	--clr-border: var(--clr-dark-grey);
 }
 
+@custom-media --mq-min-320 screen and (min-width: 320px);
+
+@custom-media --mq-max-480 screen and (max-width: 479px);
 @custom-media --mq-min-480 screen and (min-width: 480px);
+
+@custom-media --mq-max-560 screen and (max-width: 559px);
+@custom-media --mq-min-560 screen and (min-width: 560px);
+
+@custom-media --mq-max-640 screen and (max-width: 639px);
 @custom-media --mq-min-640 screen and (min-width: 640px);
+
+/*
+
+@custom-media --mq-max-720 screen and (max-width: 719px);
+@custom-media --mq-min-720 screen and (min-width: 720px);
+
+*/
+
+@custom-media --mq-max-960 screen and (max-width: 959px);
 @custom-media --mq-min-960 screen and (min-width: 960px);
 
-/* nav,
-footer,
-section,
-{
-} */
-article ,
-.div-flex {
-	width: 100%;
-}
-
-body,
-main,
-.container-960,
-.container-480,
-section {
-	position: relative;
-}
-
-main,
-.container-960,
-.container-480 {
-	margin: 0 auto;
-}
-
-main,
-.container-960 {
-	width: min(100%, 960px);
-}
-
-.container-480 {
-	width: min(100%, 480px);
-}
-
-.div-flex {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 4rem 2rem;
-
-	article {
-		max-width: 360px;
-	}
-	article.flex-item-1 {
-		max-width: 100%;
+@media (--mq-min-480) {
+	.display-lt480 {
+		display: none;
 	}
 }
 
-@media (--mq-min-640) {
-	.div-flex {
-		article:not(.flex-item-1) {
-			width: calc(50% - 1rem);
-		}
+@media (--mq-max-480) {
+	.display-gt480 {
+		display: none;
 	}
 }
 
-@media (--mq-min-960) {
-	.div-flex {
-		article:not(.flex-item-1) {
-			width: calc(33.333% - 1.5rem);
-		}
+@media (--mq-min-560) {
+	.display-lt560 {
+		display: none;
 	}
+}
+
+@media (--mq-max-560) {
+	.display-gt560 {
+		display: none;
+	}
+}
+
+main {
+	a {
+		position: relative;
+		display: inline-block;
+		height: 2rem;
+	}
+
+	a,
+	a:visited {
+		color: var(--clr-emerald-rain);
+		text-decoration: underline;
+		background-color: transparent;
+		transition: background-color 300ms;
+	}
+
+	a:focus-visible,
+	a:active,
+	a:hover,
+	a.active {
+		border: none;
+		outline: none;
+		background-color: var(--clr-dark-grey);
+	}
+
+	a > span {
+		text-decoration: underline;
+	}
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.clr-default {
+	color: var(--clr-skyscraper);
+}
+
+.clr-yellow {
+	color: #fc0;
+}
+
+.clr-orange {
+	color: #f90;
+}
+
+.clr-red {
+	color: #a36;
+}
+
+.clr-magenta {
+	color: #a3a;
+}
+
+.clr-blue {
+	color: #39c;
+}
+
+.clr-cyan {
+	color: #9ff;
 }
 
 .clr-green {
-	color: var(--clr-grass);
+	color: var(--clr-emerald-rain);
+}
+
+/* .sr-only:not(:focus):not(:active) { */
+.sr-only {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
