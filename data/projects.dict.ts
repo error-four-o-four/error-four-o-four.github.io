@@ -32,13 +32,6 @@ export default {
 		},
 		thumb: 'fcc-timer/thumb.webp',
 	},
-	fuus: {
-		title: 'Frequently Used Utilities',
-		descr: 'A TS library of frequently used utility functions. ',
-		links: {
-			repo: 'https://github.com/error-four-o-four/utils-fuu',
-		},
-	},
 	jss: {
 		title: 'javascript‑software‑synthesizer',
 		descr:
@@ -70,5 +63,14 @@ export default {
 			height: 307,
 		},
 		thumb: 'kummerbot/thumb.webp',
+	},
+	p5Sketches: {
+		title: 'p5.js sketches',
+		descr: 'A hotchpotch (monorepo) of p5.js sketches',
+		links: {
+			repo: 'https://github.com/error-four-o-four/sketches',
+			demo: 'https://error-four-o-four.github.io/sketches/',
+		},
+		tags: ['Frontend', 'p5.js', 'generative art'],
 	},
 };

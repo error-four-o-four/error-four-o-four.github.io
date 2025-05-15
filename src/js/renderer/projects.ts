@@ -87,8 +87,8 @@ const appendTags = (parent: HTMLDivElement, data: string[]) => {
 <span class="clr-blue">&lbrack;</span>
 <div class="project__tags indent clr-green">
 	${data
-		.map((tag) => `<span>&apos;${tag}&apos;</span>`)
-		.join(`<span class="clr-default">&comma;</span>\n<br />\n`)}
+			.map((tag) => `<span>&apos;${tag}&apos;</span>`)
+			.join(`<span class="clr-default">&comma;</span>\n<br />\n`)}
 </div>
 <span class="clr-blue">&rbrack;</span>&comma;	`;
 };
@@ -127,8 +127,7 @@ export const injectProjects = () => {
 		projects.kummerbot,
 		projects.jss,
 		projects.fccTimer,
-		projects.fccCalculator,
-		projects.fuus,
+		projects.p5Sketches,
 	];
 
 	for (const data of ordered) {

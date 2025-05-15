@@ -33,13 +33,6 @@ export default [
 		thumb: 'fcc-timer/thumb.webp',
 	},
 	{
-		title: 'Frequently Used Utilities',
-		descr: 'A TS library of frequently used utility functions. ',
-		links: {
-			repo: 'https://github.com/error-four-o-four/utils-fuu',
-		},
-	},
-	{
 		title: 'javascript‑software‑synthesizer',
 		descr:
 			'Open Source Contribution and Collaboration.\n\tThe JSS-01 | JavaScript Software Synthesizer -&nbsp;made by<span>&ensp;</span><a href="https://michaelkolesidis.com/" >Michael Kolesidis</a><span>&nbsp;</span>- is a web application enabling you to make and play music in the browser.',
@@ -70,5 +63,14 @@ export default [
 			height: 307,
 		},
 		thumb: 'kummerbot/thumb.webp',
+	},
+	{
+		title: 'p5.js sketches',
+		descr: 'A hotchpotch (monorepo) of p5.js sketches',
+		links: {
+			repo: 'https://github.com/error-four-o-four/sketches',
+			demo: 'https://error-four-o-four.github.io/sketches/',
+		},
+		tags: ['Frontend', 'p5.js', 'generative art'],
 	},
 ];
