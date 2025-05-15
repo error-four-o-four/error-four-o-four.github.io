@@ -7,9 +7,9 @@
 	"scripts": {
 		"dev": "vite",
 		"dev:host": "vite --host",
-		"create:html": "ts-node scripts/html/main.ts",
-		"create:icons": "ts-node scripts/icons/main.ts",
-		"create:projects": "ts-node scripts/projects/main.ts",
+		"create:html": "tsx scripts/html/main.ts",
+		"create:icons": "tsx scripts/icons/main.ts",
+		"create:projects": "tsx scripts/projects/main.ts",
 		"format:check": "prettier --config .prettierrc.json --check .",
 		"format": "prettier --config .prettierrc.json --write .",
 		"build": "tsc && vite build",
@@ -35,7 +35,7 @@
 		"postcss-import": "^16.1.0",
 		"postcss-nested": "^7.0.2",
 		"prettier": "^3.5.3",
-		"ts-node": "^10.9.2",
+		"tsx": "^4.19.4",
 		"typescript": "^5.8.3",
 		"vite": "^6.3.5",
 		"vite-plugin-static-copy": "^3.0.0"

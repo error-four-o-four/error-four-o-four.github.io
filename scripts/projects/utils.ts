@@ -16,13 +16,13 @@ export const folderUrls = fs.readdirSync(directoryPath).reduce(
 		const key: string = !/-/g.test(folderName)
 			? folderName
 			: [
-					items[0],
-					items
-						.slice(1)
-						.map(
-							(folder) => folder[0].toLocaleUpperCase() + folder.substring(1)
-						),
-			  ].join('');
+				items[0],
+				items
+					.slice(1)
+					.map(
+						(folder) => folder[0].toLocaleUpperCase() + folder.substring(1)
+					),
+			].join('');
 
 		const url = new URL(`../../data/projects/${folderName}/`, import.meta.url);
 
@@ -82,7 +82,8 @@ export const getImageData = (url: URL, file: string) => {
 	const src = `${folder}/${file}`;
 
 	try {
-		const { width, height } = imageSize(imagePath);
+		const buffer = fs.readFileSync(imagePath);
+		const { width, height } = imageSize(buffer);
 		return {
 			src,
 			width,
