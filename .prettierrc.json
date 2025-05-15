@@ -6,5 +6,5 @@
 	"arrowParens": "always",
 	"bracketSameLine": true,
 	"singleQuote": true,
-	"endOfLine": "crlf"
+	"endOfLine": "lf"
 }
