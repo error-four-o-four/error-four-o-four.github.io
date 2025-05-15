@@ -25,19 +25,19 @@
 	"license": "ISC",
 	"homepage": "https://error-four-o-four.github.io/",
 	"devDependencies": {
-		"@iconify/json": "^2.2.131",
+		"@iconify/json": "^2.2.338",
 		"@iconify/types": "^2.0.0",
-		"@iconify/utils": "^2.1.11",
+		"@iconify/utils": "^2.3.0",
 		"html-minifier-terser": "^7.2.0",
-		"image-size": "^1.0.2",
-		"postcss": "^8.4.31",
-		"postcss-custom-media": "^10.0.1",
-		"postcss-import": "^15.1.0",
-		"postcss-nested": "^6.0.1",
-		"prettier": "^3.0.3",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.2.2",
-		"vite": "^4.4.11",
-		"vite-plugin-static-copy": "^0.17.0"
+		"image-size": "^2.0.2",
+		"postcss": "^8.5.3",
+		"postcss-custom-media": "^11.0.5",
+		"postcss-import": "^16.1.0",
+		"postcss-nested": "^7.0.2",
+		"prettier": "^3.5.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"vite-plugin-static-copy": "^3.0.0"
 	}
 }
